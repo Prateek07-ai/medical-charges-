@@ -11,7 +11,14 @@ urlretrieve(medical_charges_url, 'medical.csv')
 medical_df = pd.read_csv('medical.csv')
 print(medical_df.head())
 
-non_smokers_df=medical_df[medical_df.smoker=='no']
-plt.title('Age vs. charges')
-sns.scatterplot(data=non_smokers_df,x='age',y='charges',alpha=0.7,s=15)
-plt.show()
+# non_smokers_df=medical_df[medical_df.smoker=='no']
+# plt.title('Age vs. charges')
+# sns.scatterplot(data=non_smokers_df,x='age',y='charges',alpha=0.7,s=15)
+# plt.show()
+def estimate_charges(age,w,b):
+    return w*age +b
+    
+w=50
+b=100
+
+estimate_charges(30,w,b)
