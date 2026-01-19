@@ -33,12 +33,14 @@ print(non_smokers_df.charges)
 # plt.ylabel('Estimated_charges');
 # plt.title('Estimated_charges vs Age');
 # plt.show()
+def try_parameters(w,b):
+    ages=non_smokers_df.age
+    target=non_smokers_df.charges
+    plt.plot(ages,estimated_charges,'r-',alpha=0.9)
+    plt.scatter(ages,target,s=9,alpha=0.8)
+    plt.xlabel('Age');
+    plt.ylabel('Charges');
+    plt.title('Estimated Charges vs Age');
+    plt.legend(['Estimated Charges','Actual Charges'])
+    plt.show()
 
-target=non_smokers_df.charges
-plt.plot(ages,estimated_charges,'r-',alpha=0.9)
-plt.scatter(ages,target,s=9,alpha=0.8)
-plt.xlabel('Age');
-plt.ylabel('Charges');
-plt.title('Estimated Charges vs Age');
-plt.legend(['Estimated Charges','Actual Charges'])
-plt.show()
